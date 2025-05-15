@@ -1,0 +1,718 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+  /* Setting up for sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make body at least the height of the viewport */
+}
+
+header {
+  background-color: #003B73;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Commented out intro section styles as they're no longer used in the HTML
+.intro {
+  padding: 2rem;
+  text-align: center;
+}
+
+.intro h2 {
+  color: #003B73;
+}
+*/
+
+/* Re-enabled and updated intro section styles */
+.intro {
+  padding: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  /* Add to push footer down */
+  flex: 1;
+}
+
+.intro h2 {
+  color: #003B73;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Resources page styles */
+.resources-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Add to push footer down */
+  flex: 1;
+}
+
+.resources-section h2 {
+  color: #003B73;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.resource-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card h3 {
+  color: #003B73;
+  margin-bottom: 1rem;
+}
+
+.resource-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Additional Resource Page Styles */
+.resource-disclaimer {
+  background-color: #0074B7;
+  color: white;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.resource-category {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.resource-category h3 {
+  color: #003B73;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #BFD7ED;
+}
+
+.resource-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.resource-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-item h4 {
+  color: #003B73;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.resource-item p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.resource-contact {
+  margin-top: 0.5rem;
+}
+
+.resource-image-placeholder {
+  background-color: #f0f8ff;
+  border: 1px dashed #BFD7ED;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #0074B7;
+  font-style: italic;
+}
+
+.resource-links {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.resource-links a {
+  color: #0074B7;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.resource-links a:hover {
+  text-decoration: underline;
+}
+
+.resource-tag {
+  background-color: #e0f7fa;
+  color: #003B73;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Special wide card for local business resources */
+.resource-item-wide {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  grid-column: 1 / -1; /* Make the card span the full width of the grid */
+}
+
+.resource-item-wide .resource-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-item-wide h4 {
+  color: #003B73;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.resource-item-wide .resource-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.resource-item-wide .resource-image-placeholder {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .resource-item-wide {
+    grid-template-columns: 1fr;
+  }
+  
+  .resource-item-wide .resource-image-placeholder {
+    height: 200px;
+    order: -1; /* Place image above content on mobile */
+  }
+  
+  .resource-item-wide .resource-image {
+    height: 200px;
+    order: -1; /* Place image above content on mobile */
+  }
+}
+
+/* Background page styles */
+.background-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Add to push footer down */
+  flex: 1;
+}
+
+.background-section h2 {
+  color: #003B73;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.background-content {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .background-content {
+    flex-direction: column;
+  }
+}
+
+.background-text {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Add max-width to keep it from getting too wide */
+  width: 100%; /* Ensure it takes full width on smaller screens */
+}
+
+.background-text h3 {
+  color: #003B73;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.background-text p, 
+.background-text ul, 
+.background-text ol {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.background-text ul, 
+.background-text ol {
+  padding-left: 1.5rem;
+}
+
+.cta-box {
+  background-color: #0074B7;
+  color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  align-self: start;
+}
+
+.cta-box h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.cta-box ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.cta-box .button {
+  background-color: white;
+  color: #0074B7;
+  border: none;
+}
+
+.cta-box .button:hover {
+  background-color: #f0f8ff;
+  color: #003B73;
+}
+
+/* Findings page styles */
+.findings-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Add to push footer down */
+  flex: 1;
+}
+
+.findings-section h2 {
+  color: #003B73;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.findings-grid-heading {
+  color: #003B73;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.findings-intro {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.findings-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.findings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  /* Adding container box around the findings grid */
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .findings-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem; /* Smaller padding on mobile */
+  }
+}
+
+.finding-card {
+  background-color: #f8fbff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #0074B7;
+}
+
+.finding-card h3 {
+  color: #003B73;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.stat-highlight {
+  background-color: #f0f8ff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0074B7;
+  margin-right: 1rem;
+  white-space: nowrap;
+}
+
+.stat-description {
+  line-height: 1.4;
+}
+
+.finding-card ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.finding-card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.recommendation {
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.methodology-section, .next-steps {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.methodology-section h3, .next-steps h3 {
+  color: #003B73;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.methodology-section ul {
+  padding-left: 1.5rem;
+}
+
+.methodology-section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.next-steps {
+  text-align: center;
+}
+
+.next-steps p {
+  margin-bottom: 1.5rem;
+}
+
+/* Mentoring page styles */
+.mentoring-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Add to push footer down */
+  flex: 1;
+}
+
+.mentoring-section h2 {
+  color: #003B73;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mentoring-intro {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mentoring-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.mentoring-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+  .mentoring-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mentoring-options {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mentoring-options h3 {
+  color: #003B73;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.program-card {
+  background-color: #f8fbff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #0074B7;
+}
+
+.program-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.program-header h4 {
+  color: #003B73;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.age-range {
+  background-color: #0074B7;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.program-details {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.program-details li {
+  margin-bottom: 0.5rem;
+}
+
+.mentor-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.impact-box, .testimonial, .become-mentor {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.impact-box {
+  background-color: #003B73;
+  color: white;
+}
+
+.impact-box h3 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.impact-stats {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.impact-stats li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.impact-number {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #BFD7ED;
+  margin-right: 0.5rem;
+}
+
+.testimonial {
+  font-style: italic;
+  position: relative;
+  padding-top: 2.5rem;
+}
+
+.testimonial:before {
+  content: "“";
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 4rem;
+  color: #BFD7ED;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.testimonial-author {
+  text-align: right;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.become-mentor {
+  text-align: center;
+}
+
+.become-mentor h3 {
+  color: #003B73;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.button-accent {
+  background-color: #003B73;
+}
+
+.button-accent:hover {
+  background-color: #002855;
+}
+
+.mentor-faqs {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mentor-faqs h3 {
+  color: #003B73;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.faq-item h4 {
+  color: #0074B7;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+/* Kept button styles for potential future use */
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #0074B7;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #003B73;
+}
+
+footer {
+  background-color: #BFD7ED;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: white; /* Adding white text color to ensure readability on the blue background */
+  /* Remove margin-top since we're using flexbox positioning now */
+  margin-top: 0;
+}
