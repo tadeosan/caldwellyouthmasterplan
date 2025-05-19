@@ -60,13 +60,13 @@ nav a:hover {
     align-items: center;
   }
   
-  .intro, .home-cta-box {
+  .intro, .cta-box {
     max-width: 95%;
     width: 100%;
     margin-top: 0;
   }
   
-  .home-cta-box {
+  .cta-box {
     margin-top: 1rem;
   }
 }
