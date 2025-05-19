@@ -21,12 +21,20 @@
     <h2>Youth Resources</h2>
     
     <div class="resource-disclaimer">
-      <p>Youth must be 18+ to utilize the majority of  these resources without parental consent per the Senate Bill 1329 (Parents' Right in Medical Decision-Making Act).<br>
+      <p>Youth must be 18+ to utilize the majority of these resources without parental consent per the <span class="bill-link" id="billLink">Senate Bill 1329 (Parents' Right in Medical Decision-Making Act)</span>.<br>
       <br>
       <span style="font-size: 0.9em; display: block; margin-top: 0.25em;">
         Parent consent needed regardless of circumstances if under 18.
       </span>
       </p>
+      
+      <div id="billPopup" class="bill-popup">
+        <div class="popup-content">
+          <span class="close-popup">&times;</span>
+          <h4>Senate Bill 1329</h4>
+          <p>Senate Bill 1329, also known as the Parents' Right in Medical Decision-Making Act passed in 2024. This law requires a person under the age of 18 to obtain consent from a parent or guardian before accessing most medical care. This law also requires care providers to give parents access to their minor children's medical records.</p>
+        </div>
+      </div>
     </div>
     
     <div class="resource-category">
@@ -324,7 +332,31 @@
   </main>
 
   <footer>
-    <p>© 2025 Caldwell Youth Masterplan</p>
+    <p>2025 Caldwell Youth Masterplan</p>
   </footer>
+
+  <script>
+    // Get the popup elements
+    const billLink = document.getElementById('billLink');
+    const billPopup = document.getElementById('billPopup');
+    const closeButton = document.querySelector('.close-popup');
+    
+    // Show the popup when the link is clicked
+    billLink.addEventListener('click', function() {
+      billPopup.style.display = 'flex';
+    });
+    
+    // Close the popup when the close button is clicked
+    closeButton.addEventListener('click', function() {
+      billPopup.style.display = 'none';
+    });
+    
+    // Close the popup when clicking outside of it
+    window.addEventListener('click', function(event) {
+      if (event.target === billPopup) {
+        billPopup.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
