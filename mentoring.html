@@ -2,7 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,  <a href="#" class="back-to-top" id="backToTop">↑</a>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>Caldwell Youth Masterplan</h3>
+        <p>Working to improve the daily lives of youth in Caldwell through community-driven initiatives and programs.</p>
+        <p>© 2025 Caldwell Youth Masterplan. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i>f</i></a>
+          <a href="#" class="social-icon"><i>t</i></a>
+          <a href="#" class="social-icon"><i>in</i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="background.html">Background</a></li>
+          <li><a href="findings.html">Findings</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="mentoring.html">Mentoring</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Contact</h3>
+        <ul>
+          <li>City of Caldwell</li>
+          <li>411 Blaine St</li>
+          <li>Caldwell, ID 83605</li>
+          <li><a href="tel:+12084555000">(208) 455-5000</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>Website developed for the Caldwell Youth Masterplan Initiative - 2025</p>
+    </div>
+  </footer>
+  
+  <script>
+    // Back to Top Button Functionality
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>itial-scale=1.0" />
   <title>Mentoring - Caldwell Youth Masterplan</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,6 +75,7 @@
       <a href="background.html">Background</a>
       <a href="findings.html">Findings</a>
       <a href="resources.html">Resources</a>
+      <a href="mentoring.html">Mentoring</a>
     </nav>
   </header>
 
